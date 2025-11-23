@@ -181,7 +181,7 @@ mod tests {
         assert!(project_path.is_dir());
 
         // Verify that the main Python file was created
-        let main_file = project_path.join(project_name).join("main.py");
+        let main_file = project_path.join("src").join(project_name).join("main.py");
         assert!(main_file.exists());
         assert!(main_file.is_file());
 

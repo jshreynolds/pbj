@@ -30,7 +30,8 @@ pub enum Commands {
         variant: Option<String>,
     },
 
-    /// print a list of built in templates [NOOP]
+    #[command(visible_alias="b")]
+    /// print a list of built in templates
     BuiltIns,
 
 }

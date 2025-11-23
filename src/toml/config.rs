@@ -7,7 +7,11 @@ use crate::constants::{
     CONFIG_FILE_NAME, DEFAULT_PREFIX_SEPARATOR, DEFAULT_TEMPLATE,
     DEFAULT_VARIANT_VALUE,
 };
-use crate::files::{get_default_file_contents, read_file};
+
+use crate::files::read_file;
+
+const DEFAULT_CONFIG_CONTENTS: &str = include_str!("../../default_config.toml");
+
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
@@ -50,10 +54,7 @@ impl Config {
         if let Some(config) = read_file(&PathBuf::from(CONFIG_FILE_NAME)) {
             toml::from_str(&config).expect("toml parsing failed.")
         } else {
-            toml::from_str(
-                get_default_file_contents(CONFIG_FILE_NAME)
-                    .expect("default config should always be there"),
-            )
+            toml::from_str(DEFAULT_CONFIG_CONTENTS)
             .expect("parsing of default config file failed.  This should never happen!")
         }
     }

@@ -2,6 +2,7 @@ use clap::Parser;
 use pbj::toml::config::Config;
 use pbj::parser::{Cli, Commands};
 use pbj::commands::generate::generate;
+use pbj::commands::builtins::built_ins;
 
 fn main() {
     colog::init();
@@ -18,7 +19,7 @@ fn main() {
             generate(&prefix, &project_name, &template_key, &variant);
         },
         Commands::BuiltIns => {
-            todo!()
+            built_ins();
         }
     }
 

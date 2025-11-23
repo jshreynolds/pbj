@@ -49,15 +49,3 @@ package main
        }
    }
 '''
-
-[[config]]
-file = ".vscode/settings.json"
-contents = '''
-{
-    "python.testing.pytestArgs": [
-        "tests"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
-}
-'''
