@@ -1,23 +1,35 @@
 [language]
 binary = "python"
 version = "3.10"
-name = "poetry python"
+name = "uv python"
 
 [project]
 dependencies = []
 dev_dependencies = ["pytest"]
 
 [project.tool]
-binary = "poetry"
+binary = "uv"
 
 [project.tool.commands]
-initializers = [["new", "--name", "$PROJECT_NAME", "."]]
+initializers = [["init", "--lib", "--name", "$PROJECT_NAME", "--no-workspace"]]
 add_dependency = ["add"]
-add_development_dependency = ["add", "--group", "dev"]
+add_development_dependency = ["add", "--dev"]
 run_tests = ["run", "pytest"]
 
+[[project.post.commands]]
+command = "uv"
+args = ["venv"]
+
+[[project.post.commands]]
+command = "uv"
+args = ["pip", "install", "-e", "."]
+
+[[project.post.commands]]
+command = "uv"
+args = ["run", "pytest"]
+
 [code.directories]
-source = "$PROJECT_NAME"
+source = "src/$PROJECT_NAME"
 test = "tests"
 
 [[code.source]]
