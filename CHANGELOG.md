@@ -1,35 +1,21 @@
-## 0.2.6 (2024-05-13)
+## 0.3.0 (2025-11-23)
 
-### Refactor
+### Feat
 
-- shifting responsibility to config, refactoring for clarity
-- add slightly clearer and better string handling for defaults and the like.  move logic for figuring out settings
-
-## 0.2.5 (2024-05-10)
+- **templates/python.toml**: change project tool to 'uv'
 
 ### Fix
 
 - fixed name for default config contents lookup
-
-## 0.2.4 (2024-05-08)
+- **metadat**: change url scheme to http to support temporary redirect to github of main project domain
+- **README.adoc**: add generated markdown version of documentation for crates.io
 
 ### Refactor
 
+- **README.adoc**: Add space to force bump
+- shifting responsibility to config, refactoring for clarity
+- add slightly clearer and better string handling for defaults and the like.  move logic for figuring out settings
 - add modules and rename for clarity
-
-## 0.2.3 (2024-05-08)
-
-### Fix
-
-- **metadat**: change url scheme to http to support temporary redirect to github of main project domain
-
-## 0.2.2 (2024-05-08)
-
-### Fix
-
-- **README.adoc**: add generated markdown version of documentation for crates.io
-
-## 0.2.1 (2024-05-08)
 
 ## 0.2.0 (2024-05-08)
 
